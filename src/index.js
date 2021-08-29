@@ -8,14 +8,13 @@ module.exports = function check(str, bracketsConfig) {
 
     let stack = []
     for (let i = 0; i < str.length; i++) {
-        let currentElem=str[i];
-
-
+        let currentElem = str[i];
         if (openPair.includes(currentElem)) {
-            if (str[i]===closePair[currentElem]&&stack.includes(str[i])){
+            if (str[i] === closePair[currentElem] && stack.includes(str[i])) {
                 stack.pop()
-            }else {
-                stack.push(currentElem)}
+            } else {
+                stack.push(currentElem)
+            }
 
         } else {
             if (stack.length === 0) {
